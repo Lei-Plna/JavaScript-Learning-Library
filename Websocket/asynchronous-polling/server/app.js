@@ -1,10 +1,13 @@
 const express = require('express');
 const app = express();
 
+// bodyparser for getting the body of the post request
 app.use(express.json({ extended: false }));
 
+// store the messages
 const messageStack = [];
 
+// CORS
 app.all('*', (req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET,POST');
